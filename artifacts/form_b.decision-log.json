@@ -1,0 +1,347 @@
+{
+  "form": "Desktop\\Insurance_Ai_Agent_FIXED\\Insurance Ai Agent\\forms\\form_b.html",
+  "startedAt": "2026-07-17T09:18:10.408Z",
+  "finishedAt": "2026-07-17T09:18:32.894Z",
+  "outcome": "success",
+  "pagesVisited": 4,
+  "fieldsFilled": 23,
+  "fieldsFlagged": [],
+  "confirmationData": {
+    "insuredName": "Sunrise Landscaping & Concrete LLC",
+    "dba": "Sunrise Outdoor Services",
+    "taxId": "84-2917465",
+    "orgType": "LLC",
+    "natureOfBusiness": "Residential and commercial landscaping, lawn maintenance, and light concrete flatwork such as walkways and patios.",
+    "location": {
+      "address1": "4821 Verde Canyon Rd",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "92117",
+      "county": ""
+    },
+    "contact": {
+      "name": "Maria Gonzalez",
+      "phone": "6195550142",
+      "email": "maria@sunriseoutdoor.example.com"
+    },
+    "classifications": [
+      {
+        "code": "0042",
+        "description": "Landscape Gardening",
+        "employees": "8",
+        "payroll": "385000"
+      }
+    ],
+    "inceptionDate": "08/01/2026",
+    "expirationDate": "08/01/2027",
+    "priorCoverage": "Y",
+    "expiringCarrier": "Pacific Compensation Insurance",
+    "expiringClaims": "1",
+    "usesSubcontractors": "N",
+    "certified": true
+  },
+  "decisionLog": [
+    {
+      "timestamp": "2026-07-17T09:18:12.634Z",
+      "pageIndex": 0,
+      "refId": "f0",
+      "label": "Name of Insured (as registered with the Secretary of State) *",
+      "candidateAnswerKey": "BusinessLegalName",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (name of insured)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:13.674Z",
+      "pageIndex": 0,
+      "refId": "f1",
+      "label": "Doing Business As (leave blank if none)",
+      "candidateAnswerKey": "DBAName",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (doing business as)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:14.229Z",
+      "pageIndex": 0,
+      "refId": "f2",
+      "label": "Federal Tax ID *",
+      "candidateAnswerKey": "FEIN",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (federal tax id)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:14.299Z",
+      "pageIndex": 0,
+      "refId": "f3",
+      "label": "Organization Type *",
+      "candidateAnswerKey": "EntityType",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (organization type); option resolution: exact match",
+      "action": "check"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:18.482Z",
+      "pageIndex": 0,
+      "refId": "f4",
+      "label": "Nature of Business / Operations *",
+      "candidateAnswerKey": "BusinessDescription",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (nature of business)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:18.556Z",
+      "pageIndex": 0,
+      "refId": "f5",
+      "label": "Save & Continue »",
+      "candidateAnswerKey": null,
+      "confidence": null,
+      "reasoning": "Visible field set changed after click; treating as advanced to next step.",
+      "action": "navigate"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:20.508Z",
+      "pageIndex": 1,
+      "refId": "f0",
+      "label": "Address Line 1 *",
+      "candidateAnswerKey": "MailingStreet",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (address line 1)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:21.113Z",
+      "pageIndex": 1,
+      "refId": "f1",
+      "label": "City *",
+      "candidateAnswerKey": "MailingCity",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (city)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:21.161Z",
+      "pageIndex": 1,
+      "refId": "f2",
+      "label": "State *",
+      "candidateAnswerKey": "MailingState",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (state); option resolution: exact match",
+      "action": "select"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:21.761Z",
+      "pageIndex": 1,
+      "refId": "f3",
+      "label": "Postal Code *",
+      "candidateAnswerKey": "MailingZip",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (postal code)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:22.567Z",
+      "pageIndex": 1,
+      "refId": "f5",
+      "label": "Contact Person for This Submission *",
+      "candidateAnswerKey": "ContactPerson",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (contact person)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:23.265Z",
+      "pageIndex": 1,
+      "refId": "f6",
+      "label": "Contact Telephone * digits only, e.g. 6195550142",
+      "candidateAnswerKey": "ContactPhone",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (telephone)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:24.621Z",
+      "pageIndex": 1,
+      "refId": "f7",
+      "label": "Contact E-mail *",
+      "candidateAnswerKey": "ContactEmail",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (contact e mail)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:24.621Z",
+      "pageIndex": 1,
+      "refId": "f4",
+      "label": "County (if known)",
+      "candidateAnswerKey": null,
+      "confidence": 0.99,
+      "reasoning": "[llm] Policy: skip. Optional field with no confident answermap match. No answer key in the catalog corresponds to a county value; available address fields are city, state, zip, but none represent county.",
+      "action": "skip"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:24.696Z",
+      "pageIndex": 1,
+      "refId": "f8",
+      "label": "Save & Continue »",
+      "candidateAnswerKey": null,
+      "confidence": null,
+      "reasoning": "Visible field set changed after click; treating as advanced to next step.",
+      "action": "navigate"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:24.705Z",
+      "pageIndex": 2,
+      "refId": "g0",
+      "label": "repeating section (Code *, Classification Description, # Emp *, Est. Annual Payroll *)",
+      "candidateAnswerKey": "ClassCodes",
+      "confidence": 0.9,
+      "reasoning": "Matched to array answer key \"ClassCodes\" but its \"add row\" button could not be resolved to an element (likely hidden at perception time). Skipping row addition to avoid clicking an unresolvable reference.",
+      "action": "add-row",
+      "detail": "skipped"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:24.705Z",
+      "pageIndex": 2,
+      "refId": "g0",
+      "label": "repeating section (Code *, Classification Description, # Emp *, Est. Annual Payroll *)",
+      "candidateAnswerKey": "ClassCodes",
+      "confidence": 0.9,
+      "reasoning": "Matched repeating section to array answer key \"ClassCodes\"; added 2 row(s) to reach 3 total.",
+      "action": "add-row"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:25.172Z",
+      "pageIndex": 2,
+      "refId": "f0",
+      "label": "Code * (row 1)",
+      "candidateAnswerKey": "ClassCodes[0].code",
+      "confidence": 0.8,
+      "reasoning": "positional template match reused across all rows in the repeating section",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:26.134Z",
+      "pageIndex": 2,
+      "refId": "f1",
+      "label": "Classification Description (row 1)",
+      "candidateAnswerKey": "ClassCodes[0].description",
+      "confidence": 0.8,
+      "reasoning": "positional template match reused across all rows in the repeating section",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:26.467Z",
+      "pageIndex": 2,
+      "refId": "f2",
+      "label": "# Emp * (row 1)",
+      "candidateAnswerKey": "ClassCodes[0].employees",
+      "confidence": 0.8,
+      "reasoning": "positional template match reused across all rows in the repeating section",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:27.005Z",
+      "pageIndex": 2,
+      "refId": "f3",
+      "label": "Est. Annual Payroll * (row 1)",
+      "candidateAnswerKey": "ClassCodes[0].annualPayroll",
+      "confidence": 0.8,
+      "reasoning": "positional template match reused across all rows in the repeating section",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:27.005Z",
+      "pageIndex": 2,
+      "refId": "g1",
+      "label": "repeating section ()",
+      "candidateAnswerKey": null,
+      "confidence": null,
+      "reasoning": "No array-valued answermap key matched this repeating section's row shape.",
+      "action": "add-row",
+      "detail": "skipped"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:27.100Z",
+      "pageIndex": 2,
+      "refId": "f4",
+      "label": "Save & Continue »",
+      "candidateAnswerKey": null,
+      "confidence": null,
+      "reasoning": "Visible field set changed after click; treating as advanced to next step.",
+      "action": "navigate"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:28.927Z",
+      "pageIndex": 3,
+      "refId": "f2",
+      "label": "Has the applicant had workers' compensation insurance in force during the past 12 months? *",
+      "candidateAnswerKey": "PriorWcCoverage",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (workers compensation insurance); option resolution: exact match",
+      "action": "check"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:29.006Z",
+      "pageIndex": 3,
+      "refId": "f3",
+      "label": "Does the applicant use subcontractors? *",
+      "candidateAnswerKey": "UsesSubcontractors",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (use subcontractors); option resolution: exact match",
+      "action": "check"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:29.757Z",
+      "pageIndex": 3,
+      "refId": "f0",
+      "label": "Proposed Inception Date * MM/DD/YYYY",
+      "candidateAnswerKey": "PolicyEffectiveDate",
+      "confidence": 0.95,
+      "reasoning": "[llm] Field asks for proposed inception date, which matches the policy effective date in the catalog.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:30.391Z",
+      "pageIndex": 3,
+      "refId": "f1",
+      "label": "Proposed Expiration Date * MM/DD/YYYY",
+      "candidateAnswerKey": "PolicyExpirationDate",
+      "confidence": 0.95,
+      "reasoning": "[llm] Field asks for proposed expiration date, which aligns with the policy expiration date in the catalog.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:30.476Z",
+      "pageIndex": 3,
+      "refId": "f4",
+      "label": "The producer certifies the above statements are true and complete. *",
+      "candidateAnswerKey": null,
+      "confidence": 1,
+      "reasoning": "[heuristic] Required certification checkbox automatically checked.",
+      "action": "check"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:32.577Z",
+      "pageIndex": 3,
+      "refId": "f3",
+      "label": "Expiring Carrier *",
+      "candidateAnswerKey": "CurrentTermCarrier",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (expiring carrier)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:32.654Z",
+      "pageIndex": 3,
+      "refId": "f4",
+      "label": "Claims reported during the expiring term *",
+      "candidateAnswerKey": "CurrentTermClaimCount",
+      "confidence": 0.96,
+      "reasoning": "[llm] The field asks for number of claims reported during the expiring term; the catalog provides CurrentTermClaimCount which records claim count for the current term.; option resolution: exact match",
+      "action": "select"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "form": "Desktop\\Insurance_Ai_Agent_FIXED\\Insurance Ai Agent\\forms\\form_a.html",
+  "outcome": "success",
+  "reason": null,
+  "confirmationData": {
+    "legalName": "Sunrise Landscaping & Concrete LLC",
+    "dba": "Sunrise Outdoor Services",
+    "ein": "84-2917465",
+    "entityType": "Limited Liability Company",
+    "yearsInBusiness": "7",
+    "website": "https://www.sunriseoutdoor.example.com",
+    "description": "Residential and commercial landscaping, lawn maintenance, and light concrete flatwork such as walkways and patios.",
+    "contact": {
+      "firstName": "Maria",
+      "lastName": "Gonzalez",
+      "email": "maria@sunriseoutdoor.example.com",
+      "phone": "6195550142"
+    },
+    "address": {
+      "street": "4821 Verde Canyon Rd",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "92117"
+    },
+    "effectiveDate": "2026-08-01",
+    "totalPayroll": "612500",
+    "fullTime": "11",
+    "partTime": "3",
+    "priorCoverage": "Yes",
+    "prior": {
+      "carrier": "Pacific Compensation Insurance",
+      "premium": "28400",
+      "claims": "1"
+    },
+    "certified": true
+  },
+  "fieldsFlagged": []
+}

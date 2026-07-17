@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Meridian Mutual — Workers' Comp Quick Quote</title>
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; background: #eef1f5; margin: 0; color: #1c2733; }
+  header { background: #0b3d6e; color: #fff; padding: 14px 28px; font-size: 20px; font-weight: bold; }
+  .wrap { max-width: 720px; margin: 24px auto; background: #fff; border: 1px solid #c9d2dc; border-radius: 4px; padding: 28px; }
+  h2 { font-size: 17px; border-bottom: 2px solid #0b3d6e; padding-bottom: 6px; margin-top: 0; }
+  .steps { font-size: 12px; color: #5a6b7c; margin-bottom: 18px; }
+  label { display: block; font-size: 13px; font-weight: bold; margin: 14px 0 4px; }
+  input[type=text], input[type=email], input[type=tel], input[type=date], input[type=number], select, textarea {
+    width: 100%; padding: 7px; border: 1px solid #9fb0c0; border-radius: 3px; font-size: 14px; box-sizing: border-box;
+  }
+  .row { display: flex; gap: 14px; } .row > div { flex: 1; }
+  .radio-group label { font-weight: normal; display: inline-block; margin-right: 18px; }
+  button { background: #0b3d6e; color: #fff; border: none; padding: 10px 26px; font-size: 14px; border-radius: 3px; cursor: pointer; margin-top: 22px; }
+  .err { color: #b00020; font-size: 12px; margin-top: 4px; display: none; }
+  #confirmation { display: none; }
+  pre { background: #f4f6f8; border: 1px solid #c9d2dc; padding: 12px; font-size: 12px; white-space: pre-wrap; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<header>Meridian Mutual Insurance — Agent Portal</header>
+<div class="wrap">
+
+  <!-- STEP 1 -->
+  <div id="step1" class="step">
+    <div class="steps">Step 1 of 3 — Business Information</div>
+    <h2>Tell us about the business</h2>
+    <label for="legalName">Legal Business Name *</label>
+    <input type="text" id="legalName" name="legalName">
+    <label for="dba">DBA / Trade Name (if any)</label>
+    <input type="text" id="dba" name="dba">
+    <div class="row">
+      <div>
+        <label for="ein">Employer Identification Number (EIN) *</label>
+        <input type="text" id="ein" name="ein" placeholder="XX-XXXXXXX">
+      </div>
+      <div>
+        <label for="orgType">Legal Entity Type *</label>
+        <select id="orgType" name="orgType">
+          <option value="">-- Select --</option>
+          <option>Sole Proprietorship</option>
+          <option>Partnership</option>
+          <option>Limited Liability Company</option>
+          <option>S Corporation</option>
+          <option>C Corporation</option>
+          <option>Non-Profit Organization</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="yib">Years in Business *</label>
+        <input type="number" id="yib" name="yib" min="0">
+      </div>
+      <div>
+        <label for="website">Business Website</label>
+        <input type="text" id="website" name="website">
+      </div>
+    </div>
+    <label for="desc">Description of Operations *</label>
+    <textarea id="desc" name="desc" rows="3"></textarea>
+    <div class="err" id="err1">Please complete all required fields.</div>
+    <button onclick="next(1)">Continue</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div id="step2" class="step hidden">
+    <div class="steps">Step 2 of 3 — Contact &amp; Mailing Address</div>
+    <h2>Primary contact</h2>
+    <div class="row">
+      <div><label for="fname">First Name *</label><input type="text" id="fname" name="fname"></div>
+      <div><label for="lname">Last Name *</label><input type="text" id="lname" name="lname"></div>
+    </div>
+    <div class="row">
+      <div><label for="email">Email Address *</label><input type="email" id="email" name="email"></div>
+      <div><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone"></div>
+    </div>
+    <h2 style="margin-top:26px">Mailing address</h2>
+    <label for="street">Street Address *</label>
+    <input type="text" id="street" name="street">
+    <div class="row">
+      <div><label for="city">City *</label><input type="text" id="city" name="city"></div>
+      <div>
+        <label for="state">State *</label>
+        <select id="state" name="state">
+          <option value="">-- Select --</option>
+          <option value="AL">Alabama</option><option value="AZ">Arizona</option>
+          <option value="CA">California</option><option value="GA">Georgia</option>
+          <option value="NC">North Carolina</option><option value="NV">Nevada</option>
+          <option value="SC">South Carolina</option><option value="TN">Tennessee</option>
+        </select>
+      </div>
+      <div><label for="zip">ZIP Code *</label><input type="text" id="zip" name="zip"></div>
+    </div>
+    <div class="err" id="err2">Please complete all required fields.</div>
+    <button onclick="next(2)">Continue</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div id="step3" class="step hidden">
+    <div class="steps">Step 3 of 3 — Coverage &amp; History</div>
+    <h2>Coverage details</h2>
+    <div class="row">
+      <div><label for="effDate">Requested Effective Date *</label><input type="date" id="effDate" name="effDate"></div>
+      <div><label for="totalPayroll">Total Estimated Annual Payroll ($) *</label><input type="number" id="totalPayroll" name="totalPayroll"></div>
+    </div>
+    <div class="row">
+      <div><label for="ftEmp">Number of Full-Time Employees *</label><input type="number" id="ftEmp" name="ftEmp"></div>
+      <div><label for="ptEmp">Number of Part-Time Employees</label><input type="number" id="ptEmp" name="ptEmp"></div>
+    </div>
+    <label>Does the applicant currently carry workers' compensation coverage? *</label>
+    <div class="radio-group">
+      <label><input type="radio" name="priorCov" value="Yes" onchange="togglePrior(true)"> Yes</label>
+      <label><input type="radio" name="priorCov" value="No" onchange="togglePrior(false)"> No</label>
+    </div>
+    <div id="priorSection" class="hidden">
+      <div class="row">
+        <div><label for="priorCarrier">Current Carrier Name *</label><input type="text" id="priorCarrier" name="priorCarrier"></div>
+        <div><label for="priorPremium">Current Annual Premium ($) *</label><input type="number" id="priorPremium" name="priorPremium"></div>
+      </div>
+      <label for="priorClaims">Number of Claims in Current Term *</label>
+      <input type="number" id="priorClaims" name="priorClaims" style="max-width:200px">
+    </div>
+    <label style="margin-top:22px"><input type="checkbox" id="ack"> I certify that the information provided is accurate to the best of my knowledge. *</label>
+    <div class="err" id="err3">Please complete all required fields and certify.</div>
+    <button onclick="submitQuote()">Submit Quick Quote</button>
+  </div>
+
+  <!-- CONFIRMATION -->
+  <div id="confirmation">
+    <h2>Submission received</h2>
+    <p>Reference number: <b id="refnum"></b></p>
+    <p>Captured data (for verification):</p>
+    <pre id="summary"></pre>
+  </div>
+</div>
+
+<script>
+function show(n){ document.querySelectorAll('.step').forEach(s=>s.classList.add('hidden')); document.getElementById('step'+n).classList.remove('hidden'); window.scrollTo(0,0); }
+function val(id){ return document.getElementById(id).value.trim(); }
+function togglePrior(on){ document.getElementById('priorSection').classList.toggle('hidden', !on); }
+function next(n){
+  if(n===1){
+    var ok = val('legalName') && val('ein') && val('orgType') && val('yib') && val('desc');
+    document.getElementById('err1').style.display = ok ? 'none':'block';
+    if(ok) show(2);
+  } else if(n===2){
+    var ok2 = val('fname') && val('lname') && val('email') && val('phone') && val('street') && val('city') && val('state') && val('zip');
+    document.getElementById('err2').style.display = ok2 ? 'none':'block';
+    if(ok2) show(3);
+  }
+}
+function submitQuote(){
+  var pc = document.querySelector('input[name=priorCov]:checked');
+  var ok = val('effDate') && val('totalPayroll') && val('ftEmp') && pc && document.getElementById('ack').checked;
+  if(ok && pc.value==='Yes'){ ok = val('priorCarrier') && val('priorPremium') && val('priorClaims'); }
+  document.getElementById('err3').style.display = ok ? 'none':'block';
+  if(!ok) return;
+  var data = {
+    legalName: val('legalName'), dba: val('dba'), ein: val('ein'), entityType: val('orgType'),
+    yearsInBusiness: val('yib'), website: val('website'), description: val('desc'),
+    contact: { firstName: val('fname'), lastName: val('lname'), email: val('email'), phone: val('phone') },
+    address: { street: val('street'), city: val('city'), state: val('state'), zip: val('zip') },
+    effectiveDate: val('effDate'), totalPayroll: val('totalPayroll'),
+    fullTime: val('ftEmp'), partTime: val('ptEmp'),
+    priorCoverage: pc.value,
+    prior: pc.value==='Yes' ? { carrier: val('priorCarrier'), premium: val('priorPremium'), claims: val('priorClaims') } : null,
+    certified: true
+  };
+  document.querySelectorAll('.step').forEach(s=>s.classList.add('hidden'));
+  document.getElementById('confirmation').style.display='block';
+  document.getElementById('refnum').textContent = 'MM-' + Math.floor(100000 + Math.random()*900000);
+  document.getElementById('summary').textContent = JSON.stringify(data, null, 2);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+{
+  "form": "Desktop\\Insurance_Ai_Agent_FIXED\\Insurance Ai Agent\\forms\\form_a.html",
+  "startedAt": "2026-07-17T09:17:41.693Z",
+  "finishedAt": "2026-07-17T09:18:05.459Z",
+  "outcome": "success",
+  "pagesVisited": 3,
+  "fieldsFilled": 24,
+  "fieldsFlagged": [],
+  "confirmationData": {
+    "legalName": "Sunrise Landscaping & Concrete LLC",
+    "dba": "Sunrise Outdoor Services",
+    "ein": "84-2917465",
+    "entityType": "Limited Liability Company",
+    "yearsInBusiness": "7",
+    "website": "https://www.sunriseoutdoor.example.com",
+    "description": "Residential and commercial landscaping, lawn maintenance, and light concrete flatwork such as walkways and patios.",
+    "contact": {
+      "firstName": "Maria",
+      "lastName": "Gonzalez",
+      "email": "maria@sunriseoutdoor.example.com",
+      "phone": "6195550142"
+    },
+    "address": {
+      "street": "4821 Verde Canyon Rd",
+      "city": "San Diego",
+      "state": "CA",
+      "zip": "92117"
+    },
+    "effectiveDate": "2026-08-01",
+    "totalPayroll": "612500",
+    "fullTime": "11",
+    "partTime": "3",
+    "priorCoverage": "Yes",
+    "prior": {
+      "carrier": "Pacific Compensation Insurance",
+      "premium": "28400",
+      "claims": "1"
+    },
+    "certified": true
+  },
+  "decisionLog": [
+    {
+      "timestamp": "2026-07-17T09:17:45.007Z",
+      "pageIndex": 0,
+      "refId": "f0",
+      "label": "Legal Business Name *",
+      "candidateAnswerKey": "BusinessLegalName",
+      "confidence": 0.82,
+      "reasoning": "[heuristic] Token overlap 1.00",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:46.129Z",
+      "pageIndex": 0,
+      "refId": "f1",
+      "label": "DBA / Trade Name (if any)",
+      "candidateAnswerKey": "DBAName",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (dba)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:46.179Z",
+      "pageIndex": 0,
+      "refId": "f3",
+      "label": "Legal Entity Type *",
+      "candidateAnswerKey": "EntityType",
+      "confidence": 0.9,
+      "reasoning": "[heuristic] Alias match (entity type); option resolution: acronym match against \"Limited Liability Company\"",
+      "action": "select"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:46.539Z",
+      "pageIndex": 0,
+      "refId": "f4",
+      "label": "Years in Business *",
+      "candidateAnswerKey": "YearsInBusiness",
+      "confidence": 0.97,
+      "reasoning": "[heuristic] Exact label/key match",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:50.544Z",
+      "pageIndex": 0,
+      "refId": "f6",
+      "label": "Description of Operations *",
+      "candidateAnswerKey": "BusinessDescription",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (operations)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:51.185Z",
+      "pageIndex": 0,
+      "refId": "f2",
+      "label": "Employer Identification Number (EIN) *",
+      "candidateAnswerKey": "FEIN",
+      "confidence": 0.99,
+      "reasoning": "[llm] Field asks for Employer Identification Number (EIN); catalog key FEIN holds the EIN value.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:52.735Z",
+      "pageIndex": 0,
+      "refId": "f5",
+      "label": "Business Website",
+      "candidateAnswerKey": "WebsiteUrl",
+      "confidence": 0.98,
+      "reasoning": "[llm] Field label 'Business Website' matches catalog key WebsiteUrl which stores the business website URL.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:52.811Z",
+      "pageIndex": 0,
+      "refId": "f7",
+      "label": "Continue",
+      "candidateAnswerKey": null,
+      "confidence": null,
+      "reasoning": "Visible field set changed after click; treating as advanced to next step.",
+      "action": "navigate"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:54.748Z",
+      "pageIndex": 1,
+      "refId": "f3",
+      "label": "Phone Number *",
+      "candidateAnswerKey": "ContactPhone",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (phone)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:55.348Z",
+      "pageIndex": 1,
+      "refId": "f5",
+      "label": "City *",
+      "candidateAnswerKey": "MailingCity",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (city)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:55.394Z",
+      "pageIndex": 1,
+      "refId": "f6",
+      "label": "State *",
+      "candidateAnswerKey": "MailingState",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (state); option resolution: exact match",
+      "action": "select"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:55.873Z",
+      "pageIndex": 1,
+      "refId": "f7",
+      "label": "ZIP Code *",
+      "candidateAnswerKey": "MailingZip",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (zip)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:56.363Z",
+      "pageIndex": 1,
+      "refId": "f0",
+      "label": "First Name *",
+      "candidateAnswerKey": "ContactFirstName",
+      "confidence": 0.99,
+      "reasoning": "[llm] Field label explicitly asks for first name; catalog contains ContactFirstName.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:56.951Z",
+      "pageIndex": 1,
+      "refId": "f1",
+      "label": "Last Name *",
+      "candidateAnswerKey": "ContactLastName",
+      "confidence": 0.99,
+      "reasoning": "[llm] Field label explicitly asks for last name; catalog contains ContactLastName.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:58.341Z",
+      "pageIndex": 1,
+      "refId": "f2",
+      "label": "Email Address *",
+      "candidateAnswerKey": "ContactEmail",
+      "confidence": 0.99,
+      "reasoning": "[llm] Field label requests email address; catalog provides ContactEmail.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:59.292Z",
+      "pageIndex": 1,
+      "refId": "f4",
+      "label": "Street Address *",
+      "candidateAnswerKey": "MailingStreet",
+      "confidence": 0.98,
+      "reasoning": "[llm] Field label 'Street Address' aligns with mailing street address; catalog includes MailingStreet.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:17:59.362Z",
+      "pageIndex": 1,
+      "refId": "f8",
+      "label": "Continue",
+      "candidateAnswerKey": null,
+      "confidence": null,
+      "reasoning": "Visible field set changed after click; treating as advanced to next step.",
+      "action": "navigate"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:01.071Z",
+      "pageIndex": 2,
+      "refId": "f1",
+      "label": "Total Estimated Annual Payroll ($) *",
+      "candidateAnswerKey": "AnnualPayrollTotal",
+      "confidence": 0.82,
+      "reasoning": "[heuristic] Token overlap 0.75",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:01.450Z",
+      "pageIndex": 2,
+      "refId": "f2",
+      "label": "Number of Full-Time Employees *",
+      "candidateAnswerKey": "FullTimeEmployees",
+      "confidence": 0.82,
+      "reasoning": "[heuristic] Token overlap 0.75",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:01.782Z",
+      "pageIndex": 2,
+      "refId": "f3",
+      "label": "Number of Part-Time Employees",
+      "candidateAnswerKey": "PartTimeEmployees",
+      "confidence": 0.82,
+      "reasoning": "[heuristic] Token overlap 0.75",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:01.859Z",
+      "pageIndex": 2,
+      "refId": "f4",
+      "label": "Does the applicant currently carry workers' compensation coverage? *",
+      "candidateAnswerKey": "PriorWcCoverage",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (workers compensation); option resolution: exact match",
+      "action": "check"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:02.097Z",
+      "pageIndex": 2,
+      "refId": "f0",
+      "label": "Requested Effective Date *",
+      "candidateAnswerKey": "PolicyEffectiveDate",
+      "confidence": 0.97,
+      "reasoning": "[llm] The field asks for the requested effective date, which aligns with the PolicyEffectiveDate value in the catalog.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:02.173Z",
+      "pageIndex": 2,
+      "refId": "f5",
+      "label": "I certify that the information provided is accurate to the best of my knowledge. *",
+      "candidateAnswerKey": null,
+      "confidence": 1,
+      "reasoning": "[heuristic] Required certification checkbox automatically checked.",
+      "action": "check"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:04.430Z",
+      "pageIndex": 2,
+      "refId": "f5",
+      "label": "Current Carrier Name *",
+      "candidateAnswerKey": "CurrentTermCarrier",
+      "confidence": 1,
+      "reasoning": "[heuristic] Alias match (current carrier)",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:04.872Z",
+      "pageIndex": 2,
+      "refId": "f6",
+      "label": "Current Annual Premium ($) *",
+      "candidateAnswerKey": "CurrentTermPremium",
+      "confidence": 0.85,
+      "reasoning": "[llm] Field asks for current annual premium amount, which aligns with the stored value for the current term's premium.",
+      "action": "fill"
+    },
+    {
+      "timestamp": "2026-07-17T09:18:05.158Z",
+      "pageIndex": 2,
+      "refId": "f7",
+      "label": "Number of Claims in Current Term *",
+      "candidateAnswerKey": "CurrentTermClaimCount",
+      "confidence": 0.95,
+      "reasoning": "[llm] Field requests number of claims in the current term, directly matching the answer key for current term claim count.",
+      "action": "fill"
+    }
+  ]
+}

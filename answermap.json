@@ -1,0 +1,51 @@
+{
+  "BusinessLegalName": { "answer": "Sunrise Landscaping & Concrete LLC" },
+  "DBAName": { "answer": "Sunrise Outdoor Services" },
+  "FEIN": { "answer": "84-2917465" },
+  "EntityType": { "answer": "LLC" },
+  "YearsInBusiness": { "answer": "7" },
+  "BusinessDescription": { "answer": "Residential and commercial landscaping, lawn maintenance, and light concrete flatwork such as walkways and patios." },
+  "WebsiteUrl": { "answer": "https://www.sunriseoutdoor.example.com" },
+
+  "ContactFirstName": { "answer": "Maria" },
+  "ContactLastName": { "answer": "Gonzalez" },
+  "ContactTitle": { "answer": "Owner" },
+  "ContactEmail": { "answer": "maria@sunriseoutdoor.example.com" },
+  "ContactPhone": { "answer": "(619) 555-0142" },
+  "ContactPerson": {"answer": "Maria Gonzalez"},
+  "MailingStreet": { "answer": "4821 Verde Canyon Rd" },
+  "MailingCity": { "answer": "San Diego" },
+  "MailingState": { "answer": "CA" },
+  "MailingZip": { "answer": "92117" },
+  "LocationSameAsMailing": { "answer": "Yes" },
+
+  "PolicyEffectiveDate": { "answer": "2026-08-01" },
+  "PolicyExpirationDate": { "answer": "2027-08-01" },
+
+  "FullTimeEmployees": { "answer": "11" },
+  "PartTimeEmployees": { "answer": "3" },
+  "AnnualPayrollTotal": { "answer": "612500" },
+
+  "ClassCodes": {
+    "answer": [
+      { "code": "0042", "description": "Landscape Gardening", "employees": "8", "annualPayroll": "385000" },
+      { "code": "8810", "description": "Clerical Office Employees", "employees": "2", "annualPayroll": "104500" },
+      { "code": "5201", "description": "Concrete or Cement Work", "employees": "4", "annualPayroll": "123000" }
+    ]
+  },
+
+  "UsesSubcontractors": { "answer": "No" },
+  "WorkAboveThreeStories": { "answer": "No" },
+
+  "PriorWcCoverage": { "answer": "Yes" },
+  "CurrentTermCarrier": { "answer": "Pacific Compensation Insurance" },
+  "CurrentTermEffectiveDate": { "answer": "2025-08-01" },
+  "CurrentTermExpirationDate": { "answer": "2026-08-01" },
+  "CurrentTermPremium": { "answer": "28400" },
+  "CurrentTermClaimCount": { "answer": "1" },
+  "Prior1TermCarrier": { "answer": "Pacific Compensation Insurance" },
+  "Prior1TermEffectiveDate": { "answer": "2024-08-01" },
+  "Prior1TermExpirationDate": { "answer": "2025-08-01" },
+  "Prior1TermPremium": { "answer": "26100" },
+  "Prior1TermClaimCount": { "answer": "0" }
+}

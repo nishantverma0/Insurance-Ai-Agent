@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pacific Shield WC Portal — New Business Submission</title>
+<style>
+  body { font-family: Verdana, Geneva, sans-serif; background: #f6f4ef; margin: 0; color: #2b2b2b; font-size: 13px; }
+  header { background: #1e5e3a; color: #fff; padding: 12px 24px; }
+  header h1 { font-size: 18px; margin: 0; }
+  .container { max-width: 780px; margin: 20px auto; background: #fff; border: 1px solid #d5d0c4; padding: 24px 30px; }
+  .progress { font-size: 11px; color: #6b6b6b; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+  fieldset { border: 1px solid #d5d0c4; margin-bottom: 18px; padding: 14px 16px; }
+  legend { font-weight: bold; color: #1e5e3a; padding: 0 6px; }
+  label { display: block; margin: 10px 0 3px; font-weight: bold; }
+  .note { font-weight: normal; color: #777; font-size: 11px; }
+  input[type=text], select { width: 100%; padding: 6px; border: 1px solid #a8a294; font-size: 13px; box-sizing: border-box; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid4 { display: grid; grid-template-columns: 90px 1fr 90px 130px 40px; gap: 8px; align-items: end; }
+  .inline label { display: inline; font-weight: normal; margin-right: 16px; }
+  button { background: #1e5e3a; color: #fff; border: 0; padding: 9px 22px; cursor: pointer; font-size: 13px; }
+  button.link { background: none; color: #1e5e3a; text-decoration: underline; padding: 4px; }
+  button.del { background: #8a2b2b; padding: 6px 10px; }
+  .error { color: #a10000; display: none; margin: 8px 0; }
+  .page { display: none; } .page.active { display: block; }
+  pre { background: #f2f0ea; border: 1px solid #d5d0c4; padding: 10px; font-size: 11px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<header><h1>Pacific Shield — Workers' Compensation New Business Submission</h1></header>
+<div class="container">
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="pg1">
+    <div class="progress">Section 1 of 4 · Applicant Information</div>
+    <fieldset>
+      <legend>Applicant</legend>
+      <label>Name of Insured (as registered with the Secretary of State) *</label>
+      <input type="text" id="insuredName">
+      <label>Doing Business As <span class="note">(leave blank if none)</span></label>
+      <input type="text" id="dbaName">
+      <label>Federal Tax ID *</label>
+      <input type="text" id="taxId" placeholder="9 digits, format XX-XXXXXXX">
+      <label>Organization Type *</label>
+      <div class="inline" id="orgTypeGrp">
+        <label><input type="radio" name="orgType" value="INDIV"> Individual</label>
+        <label><input type="radio" name="orgType" value="PART"> Partnership</label>
+        <label><input type="radio" name="orgType" value="LLC"> LLC</label>
+        <label><input type="radio" name="orgType" value="CORP"> Corporation</label>
+        <label><input type="radio" name="orgType" value="OTHER"> Other</label>
+      </div>
+      <label>Nature of Business / Operations *</label>
+      <input type="text" id="natureBiz">
+    </fieldset>
+    <div class="error" id="e1">All required fields in this section must be completed.</div>
+    <button onclick="goNext(1)">Save &amp; Continue &raquo;</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="pg2">
+    <div class="progress">Section 2 of 4 · Primary Location</div>
+    <fieldset>
+      <legend>Primary business location</legend>
+      <label>Address Line 1 *</label>
+      <input type="text" id="addr1">
+      <div class="grid2">
+        <div><label>City *</label><input type="text" id="locCity"></div>
+        <div><label>State *</label>
+          <select id="locState">
+            <option value="">Choose...</option>
+            <option value="CA">CA - California</option><option value="AZ">AZ - Arizona</option>
+            <option value="NV">NV - Nevada</option><option value="GA">GA - Georgia</option>
+            <option value="AL">AL - Alabama</option><option value="TN">TN - Tennessee</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid2">
+        <div><label>Postal Code *</label><input type="text" id="locZip"></div>
+        <div><label>County <span class="note">(if known)</span></label><input type="text" id="locCounty"></div>
+      </div>
+      <label>Contact Person for This Submission *</label>
+      <input type="text" id="contactFull" placeholder="Full name">
+      <div class="grid2">
+        <div><label>Contact Telephone * <span class="note">digits only, e.g. 6195550142</span></label><input type="text" id="contactTel"></div>
+        <div><label>Contact E-mail *</label><input type="text" id="contactEmail"></div>
+      </div>
+    </fieldset>
+    <div class="error" id="e2">All required fields in this section must be completed.</div>
+    <button onclick="goNext(2)">Save &amp; Continue &raquo;</button>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="pg3">
+    <div class="progress">Section 3 of 4 · Classifications &amp; Payroll</div>
+    <fieldset>
+      <legend>Class codes</legend>
+      <p class="note">Add one row per governing classification. At least one row is required.</p>
+      <div id="ccRows"></div>
+      <button class="link" onclick="addRow()">+ Add another classification</button>
+    </fieldset>
+    <div class="error" id="e3">Each classification row requires a class code, employee count, and payroll.</div>
+    <button onclick="goNext(3)">Save &amp; Continue &raquo;</button>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="pg4">
+    <div class="progress">Section 4 of 4 · Policy &amp; History</div>
+    <fieldset>
+      <legend>Policy term</legend>
+      <div class="grid2">
+        <div><label>Proposed Inception Date * <span class="note">MM/DD/YYYY</span></label><input type="text" id="inception" placeholder="MM/DD/YYYY"></div>
+        <div><label>Proposed Expiration Date * <span class="note">MM/DD/YYYY</span></label><input type="text" id="expiration" placeholder="MM/DD/YYYY"></div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Loss history</legend>
+      <label>Has the applicant had workers' compensation insurance in force during the past 12 months? *</label>
+      <div class="inline">
+        <label><input type="radio" name="hadCov" value="Y" onchange="document.getElementById('lossDetail').style.display='block'"> Yes</label>
+        <label><input type="radio" name="hadCov" value="N" onchange="document.getElementById('lossDetail').style.display='none'"> No</label>
+      </div>
+      <div id="lossDetail" style="display:none">
+        <label>Expiring Carrier *</label>
+        <input type="text" id="expCarrier">
+        <label>Claims reported during the expiring term *</label>
+        <select id="claimCount">
+          <option value="">Select…</option>
+          <option value="0">None</option>
+          <option value="1">1 claim</option>
+          <option value="2">2 claims</option>
+          <option value="3+">3 or more</option>
+        </select>
+      </div>
+      <label>Does the applicant use subcontractors? *</label>
+      <div class="inline">
+        <label><input type="radio" name="subs" value="Y"> Yes</label>
+        <label><input type="radio" name="subs" value="N"> No</label>
+      </div>
+    </fieldset>
+    <label style="font-weight:normal"><input type="checkbox" id="agree"> The producer certifies the above statements are true and complete. *</label>
+    <div class="error" id="e4">Complete all required fields and certify before submitting.</div>
+    <button onclick="finish()">Submit for Quotation</button>
+  </div>
+
+  <!-- DONE -->
+  <div class="page" id="done">
+    <h2 style="color:#1e5e3a">Submission Complete</h2>
+    <p>Submission ID: <b id="subId"></b></p>
+    <p>Captured data (for verification):</p>
+    <pre id="capture"></pre>
+  </div>
+</div>
+
+<script>
+var rowCount = 0;
+function addRow(){
+  rowCount++;
+  var d = document.createElement('div');
+  d.className = 'grid4'; d.id = 'ccrow'+rowCount;
+  d.innerHTML =
+    '<div><label>Code *</label><input type="text" class="cc-code"></div>' +
+    '<div><label>Classification Description</label><input type="text" class="cc-desc"></div>' +
+    '<div><label># Emp *</label><input type="text" class="cc-emp"></div>' +
+    '<div><label>Est. Annual Payroll *</label><input type="text" class="cc-pay"></div>' +
+    '<div><button class="del" onclick="this.closest(\'.grid4\').remove()">×</button></div>';
+  document.getElementById('ccRows').appendChild(d);
+}
+addRow();
+function v(id){ return document.getElementById(id).value.trim(); }
+function goto(n){ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active')); document.getElementById(n).classList.add('active'); window.scrollTo(0,0); }
+function goNext(n){
+  if(n===1){
+    var ok = v('insuredName') && v('taxId') && document.querySelector('input[name=orgType]:checked') && v('natureBiz');
+    document.getElementById('e1').style.display = ok?'none':'block'; if(ok) goto('pg2');
+  } else if(n===2){
+    var ok2 = v('addr1') && v('locCity') && v('locState') && v('locZip') && v('contactFull') && v('contactTel') && v('contactEmail');
+    document.getElementById('e2').style.display = ok2?'none':'block'; if(ok2) goto('pg3');
+  } else if(n===3){
+    var rows = document.querySelectorAll('#ccRows .grid4'); var ok3 = rows.length>0;
+    rows.forEach(function(r){
+      if(!r.querySelector('.cc-code').value.trim() || !r.querySelector('.cc-emp').value.trim() || !r.querySelector('.cc-pay').value.trim()) ok3=false;
+    });
+    document.getElementById('e3').style.display = ok3?'none':'block'; if(ok3) goto('pg4');
+  }
+}
+function finish(){
+  var had = document.querySelector('input[name=hadCov]:checked');
+  var subs = document.querySelector('input[name=subs]:checked');
+  var ok = v('inception') && v('expiration') && had && subs && document.getElementById('agree').checked;
+  if(ok && had.value==='Y'){ ok = v('expCarrier') && v('claimCount'); }
+  document.getElementById('e4').style.display = ok?'none':'block';
+  if(!ok) return;
+  var classes = [];
+  document.querySelectorAll('#ccRows .grid4').forEach(function(r){
+    classes.push({ code: r.querySelector('.cc-code').value.trim(), description: r.querySelector('.cc-desc').value.trim(),
+      employees: r.querySelector('.cc-emp').value.trim(), payroll: r.querySelector('.cc-pay').value.trim() });
+  });
+  var data = {
+    insuredName: v('insuredName'), dba: v('dbaName'), taxId: v('taxId'),
+    orgType: document.querySelector('input[name=orgType]:checked').value,
+    natureOfBusiness: v('natureBiz'),
+    location: { address1: v('addr1'), city: v('locCity'), state: v('locState'), zip: v('locZip'), county: v('locCounty') },
+    contact: { name: v('contactFull'), phone: v('contactTel'), email: v('contactEmail') },
+    classifications: classes,
+    inceptionDate: v('inception'), expirationDate: v('expiration'),
+    priorCoverage: had.value,
+    expiringCarrier: had.value==='Y' ? v('expCarrier') : null,
+    expiringClaims: had.value==='Y' ? v('claimCount') : null,
+    usesSubcontractors: subs.value,
+    certified: true
+  };
+  goto('done');
+  document.getElementById('subId').textContent = 'PS-' + Date.now().toString().slice(-8);
+  document.getElementById('capture').textContent = JSON.stringify(data, null, 2);
+}
+</script>
+</body>
+</html>
